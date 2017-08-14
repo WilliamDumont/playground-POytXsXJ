@@ -1,26 +1,29 @@
-# Welcome!
-
-This Java template lets you get started quickly with a simple one-page playground.
-
-You can create a runnable code snippet using the `runnable` keyword:
-
 ```java runnable
 // { autofold
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Main {
 
-public static void main(String[] args) {
+public static void main(String[] args) throws Exception {
+
 // }
 
-String message = "Hello World!";
-System.out.println(message);
+List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
 
-//{ autofold
+List<Integer> newIntegers = integers.stream()
+    .filter(i -> i <= 3)
+    .map(i -> 2*i)
+    .collect(Collectors.toList());
+
+System.out.println(newIntegers);
+
+// { autofold
+
 }
 
 }
-//}
+
+// }
 ```
-
-# Advanced usage
-
-For more complex playgrounds, you can use this [Java template](https://github.com/TechDotIO/java-template)
